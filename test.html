@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// Função para cadastrar um novo animal
+function cadastrarAnimal(nome, especie, raca, idade, cor, porte, domestico) {
+    return [nome, especie, raca, idade, cor, porte, domestico];
+}
+
+// Função para cadastrar um novo dono
+function cadastrarDono(nome, sobrenome, telefone) {
+    return [nome, sobrenome, telefone];
+}
+
+// Função para separar os animais por espécie
+function separarAnimaisPorEspecie(animais) {
+    let caes = [];
+    let gatos = [];
+    let passaros = [];
+
+    for (let i = 0; i < animais.length; i++) {
+        let animal = animais[i];
+        if (animal[1] === 'Cão') {
+            caes.push(animal);
+        } else if (animal[1] === 'Gato') {
+            gatos.push(animal);
+        } else if (animal[1] === 'Pássaro') {
+            passaros.push(animal);
+        }
+    }
+
+    return [caes, gatos, passaros];
+}
+
+// Função para imprimir os dados dos donos e dos pets
+function imprimirDados(donos, animais) {
+    for (let i = 0; i < donos.length; i++) {
+        let dono = donos[i];
+        console.log(`Dados do dono: ${dono[0]} ${dono[1]}, Telefone: ${dono[2]}`);
+        console.log("Animais:");
+        for (let j = 0; j < animais.length; j++) {
+            let animal = animais[j];
+            if (animal[7] === dono[0]) {
+                console.log(`Nome: ${animal[0]}, Espécie: ${animal[1]}, Raça: ${animal[2]}, Idade: ${animal[3]}, Cor: ${animal[4]}, Porte: ${animal[5]}, Doméstico: ${animal[6]}`);
+            }
+        }
+        console.log("\n");
+    }
+}
+
+// Função principal para testar o programa
+function main() {
+    // Cadastro de donos
+    let dono1 = cadastrarDono("João", "Silva", "123456789");
+    let dono2 = cadastrarDono("Maria", "Santos", "987654321");
+
+    // Cadastro de animais
+    let animal1 = cadastrarAnimal("Rex", "Cão", "Labrador", 3, "Marrom", "Grande", true);
+    let animal2 = cadastrarAnimal("Toby", "Cão", "Poodle", 5, "Branco", "Pequeno", true);
+    let animal3 = cadastrarAnimal("Frajola", "Gato", "Vira-lata", 2, "Preto", "Médio", true);
+    let animal4 = cadastrarAnimal("Piu-Piu", "Pássaro", "Canário", 1, "Amarelo", "Pequeno", false);
+
+    // Associando animais aos donos
+    animal1.push(dono1[0]);
+    animal2.push(dono1[0]);
+    animal3.push(dono2[0]);
+    animal4.push(dono2[0]);
+
+    let donos = [dono1, dono2];
+    let animais = [animal1, animal2, animal3, animal4];
+
+    // Separando os animais por espécie
+    let animaisSeparados = separarAnimaisPorEspecie(animais);
+
+     //Imprimindo os dados
+    console.log("== Dados dos donos e seus animais ==");
+    imprimirDados(donos, animais);
+
+     //Imprimindo os animais separados por espécie
+    console.log("== Animais separados por espécie ==");
+    console.log("Cães:", animaisSeparados[0]);
+    console.log("Gatos:", animaisSeparados[1]);
+    console.log("Pássaros:", animaisSeparados[2]);
+}
+
+
+    </script>
+    
+</body>
+</html>

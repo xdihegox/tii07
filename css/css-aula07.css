@@ -1,0 +1,91 @@
+/* 
+ Programa - menu responsivo + modal popUP
+* autor Diego carvalho
+* licença GNU
+* Data 2024/04/11
+* versão: V1.0
+            *************importando arquivos**************
+*/
+@import url(reset.css);
+@import url("https:/fonts.googleapis.com/css?family=Open+sans|Roboto:400,700&display=swap");
+ 
+ 
+:root{
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sens", sans-serif;
+    --ff-title:#49a6e9;
+    --fc:#00f;
+    --spacing:0.25rem;
+    --radius:0.5rem;
+    --max-width: 1170px;
+    --transition: all 0.3s linear;
+}
+body{
+    font-family: var(--ff-secondary);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+a{text-decoration: none;}
+a, img{display: block;}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--ff-primary);
+    color: var(--ff-title);
+    letter-spacing: var(--spacing);
+}
+.modal-bnt{
+    margin-top: 2rem;
+    background: #000;
+    color: #fff;
+    border-radius: var(--radius);
+    text-align: center;
+    width: 90vw;
+    height: 45px;
+    cursor: pointer;
+}
+.modal-bnt:hover{
+    background: var(--fc);
+    color: var(--fc-title)
+}
+.modal-overLay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    z-index: -10;
+    transition: var(--transition);
+}
+.open-modal{
+    visibility: visible;
+    z-index: 10;
+}
+.modal-container{
+    width: 70%;
+    height: 30vh;
+    max-width: var(--max-width);
+    background: var(--cw);
+    border-radius: var(--radius);
+    display: grid;
+    place-items: center;
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+.close-bnt{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: var(--cb);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.close-bnt:houver{
+    color: var(--fc);
+    transform: scale(1.3);
+}

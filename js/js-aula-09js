@@ -1,0 +1,42 @@
+
+
+$('#btnEnviar').click((e)=>{ 
+    e.preventdefault();
+    // Criar objeto com os dados do formulario
+    let dataForm ={
+        setname: $('#nome').val(),
+        setEmail: $("#email").val(),
+        setPhone: $("#telefone").val(),
+        setWhats: $("#whatsapp").val()
+    }
+    // Validar os campos do formiulario
+     if(dataForm.setname.length <3){
+        $('.msg-error').text("Nome invalido!").show();
+        return false;
+     }else if(dataForm.setEmail.length <7){
+        $('.msg-error').text("Email invalido").show();
+        return false;
+    }else if(dataForm.setPhone.length< 11 ){
+        $('.msg-error'). text('telefone invalido').show();
+        return false;
+    }else if(dataForm.setWhats.length < 11){
+        $('.msg-error').text("whatsapp invalido").show();
+        return false;
+    }
+    $('.msg-error').hide();
+
+    // Construçao do ajax
+
+    let urlAction = "enviar.html";
+     $.ajax({
+        url: urlAction,
+        type: "POST",
+        data: dataForm,
+        datatype: "json",
+        async: true
+     })
+
+     console.log(dataForm)
+    
+    });
+

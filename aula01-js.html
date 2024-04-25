@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 01-JS</title>
+    <!-- crindo nosso primeiro programa em js-->
+    <script>
+        /*/criando um alerta na pagina
+        alert("Olá mundo");
+
+        //criando variaveis com "var"
+        var nome;
+
+        // atribuindo valor a variavel nome
+/*
+        nome = "Diego carvalho";
+        alert (nome)
+        alert ("Olá " + nome + ", voce esta bem sem maconha ? ")
+
+        nome = 5+6;
+        alert(nome)
+
+        nome = prompt("Digite seu nome: ")
+        alert(nome);
+
+         o prompt é uma caixa de digitação que ira passar um valor nome = prompt ("digite seu nome")
+        nome = prompt ("digite seu nome")
+        alert(nome)
+
+
+         *Programa troca de valores *versao : v1
+         *autor : Diego carvalho
+         *licença: GNU
+         *data 27/03/2024
+        
+         //
+/*
+         
+         var A, B, TEMP;
+         A= prompt("digite uma cor: ")
+         B= prompt("digite outra cor: ")
+
+         TEMP = A;
+         A = B;
+         B = TEMP;
+
+         alert("O valor da cor de A é: "+ A);
+         alert("O valor da cor de B é: "+ B);
+
+         
+*/         
+        //operadores aritimeticos
+
+         /* exponencial              -- **
+          * mutiplicação             -- *
+          * Divisão                  -- /
+          * Modulo(resto da divisão) -- %
+          * Adição                   -- +
+          * Subtração                -- -
+          * Incrementar              -- ++
+          * Decremetar               -- --
+          
+        // operadores relacionais
+          * Igualdade               -- ==
+          * Igualdade absoluta      -- ===
+          * Diferente de            -- !=
+          * difirente de absoluto   -- !==
+          * maior que               -- >
+          * menor que               -- <
+          * maior ou igual          -- <=
+          * menor ou igual          -- >=
+          
+        //operadores Lógicos
+          /*
+          * Conjunção "E"           -- &&
+          * Disjução  "OU"          -- ||
+          * Negação   "NÂO"         -- !
+          *   
+        */ 
+/*                  
+        // Cirando variaveis com let
+        let a, b, result
+
+        a = parseInt(prompt("Digite o 1° valor: "))
+        b = parseInt(prompt("Digite o 2° valor: "))
+         
+        result = (a**b)
+        result = (a*b)
+        result = (a/b)
+        result = (a%b)
+        result = (a+b)
+        result = (a-b)
+        //a++
+        a--
+
+        // o parsefloat converte de entrada para numeoro do tipo real
+        a = parseFloat(prompt("Digite o valor para A: "))
+
+        result = a
+        alert("O resultado é: " + result)
+*/
+
+        /*Crie um programa que após a entrada do nome, materia, notas
+        avaliação 1, trabalho e avaliação 2, calcule a média para este
+        bimestre. No final solte um alerta com nome, matéria e média do bismestre
+        */
+
+
+    var nome, materia, nota1, nota2, nota3, mediaBi
+
+    nome = prompt("Digite o nome do aluno:")
+    materia = prompt("Digite o nome da materia:")
+    nota1 = parseFloat (prompt ("Digite a nota de 1°avaliação:"))
+    nota2 = parseFloat ( prompt ("Digite a nota do trabalho:"))
+    nota3 = parseFloat (prompt ("Digite a nota da 2° avaliação:"))    
+    mediaBi= parseFloat (nota1 + nota2 + nota2 /3)
+    
+    alert( nome  + materia + mediaBi )
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
